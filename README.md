@@ -12,19 +12,16 @@
 
 # information about ticket --> to be transferred to the pull request
 - [x] **JIRA ticket**: [BFXA-5715](https://tempuslabs.atlassian.net/jira/software/c/projects/BFXA/boards/1249?assignee=712020%3Afe369597-023a-4144-a1f8-84df1cca7bd4&selectedIssue=BFXA-5715&useStoredSettings=true)
-- [x] **th_exec on good spelling**
-| analysis ID | execution ID | Header 3 | Header 4 |
+- [x] **th_exec on February 11, 2025**
+| sample | analysis ID | execution ID | 
 |----------|----------|----------|----------|
-| agkpknncv5bdzbjjvemcixljou | 51078d8c-1538-4d92-94ee-c7ee026f2b05 | Data     | Data     |
-| | | | |
-| agkpknojvfff7o4uihzpyqejfe | 88515fa2-4730-446c-a31b-867b401e35a9 | Data     | Data     |
-| agkpknpnvvdtra57hjphz7qzgy | df1dd40e-5e29-4934-8ce1-cce0a0f6f0d0 | Data     | Data     |
-| agkpknmwrbdsrhkxaqlkuuwvf4 | 343e0291-9fad-4633-b146-49745a48a244 | Data     | Data     |
-| agkpknov65fz5npjqpk6qfxt5q | 9b7e63d0-a44a-4338-85cd-ceb77c120a78 | Data     | Data     |
-| agkpknnq4fhyrihdeebnexn6pe | d3b1746e-e0f5-44df-aa61-df89123fbef6 | Data     | Data     |
-| agkpknn6fbd75lphlmmy6ntg5e | 1a1ca4a8-ff28-4a04-911a-1f1a80c57fb1 | Data     | Data     |
-| agkpknpbsbehpjjtka3lwqmbam | 81ed73a6-c427-4266-b7bf-fa9d63bbd981 | Data     | Data     |
-| agkpknmbqzdtfiae2nxsncxstm | 2411b237-dd98-46b5-aa9b-10510a87b1e8 | Data     | Data     |
-
-
-
+| sample7 | agkpnofdprgyrfrbf2ktrhphoy | 5fd12c8f-6096-4226-9f26-df6c757ae25a | 
+| sample8 | agkpnoelv5cgrmg4of2ibtifhe | 1bd621ff-259f-459b-83e4-862d3b128892 |
+| sample9 | agkpnogg5ne37cdceob7pwd7iu | c821c8cc-34e4-459b-91c9-bb9a71844487 |
+| sample10 | agkpnohlpfgbpo4vcxaniey4yq | e176172e-57f6-48cf-ab4b-6dcef7c6d54b |
+| sample11 | agkpnoeygne7tio77ohqmchpiu | 04bddba5-2257-46cb-9f57-39e31c81dd5d |
+| sample12 | agkpnogspraaribakstwrvgzxe | c04fad18-17bd-43b5-95d8-2c61a742e1d5 |
+| sample13 | agkpnofpaba45gvam7zcu2nq7a | 17fbf33a-d07e-4ffe-a9c9-129a6905a312 |
+| sample14 | agkpnof2ozgb3cigflweufqf6m | 44294b02-6bb9-4061-b63e-ee4936c29550 |
+| sample15 | agkpnog67bcpnpjp7u7vzozmyq | a690156e-8c07-46ba-9172-dd50dff04c63 |
+| sample16 | agkpnod64rd33euds3qzdalmv4 | 4e4bb26c-0479-4e23-bd83-195310930dc3 |
