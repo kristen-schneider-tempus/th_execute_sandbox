@@ -25,11 +25,21 @@ pip freeze | grep "library" # to get version that is installed
 poetry add <libarary=version.0.0>
 ```
 - do NOT run `poetry update` or `poetry lock` or `poetry install` as it will update all libraries and likely ruin the lock file.
-
 - copy the content of the lock file to the local repo and commit it
 - copy the content of the toml file to the local repo and commit it
+- push the changes to the repo
+- go to the PR page and choose "draft PR"
+- wait for tests to run
 
-
+# register in beta
+- follow the link to the concourse pipeline
+- _login_
+- click "pull-request"
+- click "pr-register-in-bet"
+- check that commits align with the changes you expect to see
+- click "trigger a new build"
+- wait for the tests to run
+- follow put: transform-resource-bet to get the transform id (bottom of page)
 
 
 # running th_execute
@@ -48,8 +58,4 @@ poetry add <libarary=version.0.0>
 - **transform_id**: new transform id that is being tested (from concourse)
 - **rnfd-annotated-fusions-collapsed-intermediate_dpID**: this a dp for each sample, and will be different for each sample. `dps search -m analysis-id=agj3dc4vfbbkviesmpdxdchbrq --type=rnfd-annotated-fusions-collapsed-intermediate` --> look for latest version, knowing the difference between ldt (runs automaticallly) and xr-IVD. then look at the `id` field in the top (not metadata)
 - **rnfd-reportable-fusion-reference-criterion_dpID**: this is a dp for the reference, and should be applied to all samples. `dps search --type rnfd-reportable-fusion-reference-criterion` --> "id": xxx-xxx...
-
-# register in beta
-
-
 
