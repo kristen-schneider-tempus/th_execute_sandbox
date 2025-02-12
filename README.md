@@ -9,10 +9,26 @@ docker rmi <us-docker.pkd.dev/transform-v1-artifact-register/docker/...:pr-abcde
 docker run --platform linux/amd64 -it --entrypoint /bin/bash <image-id> 
 --> can add -v /path/to/local/data:/opt/tempus/transform/bin/data to mount data
 ```
-## environment
+- open VSCode and connect to the container with "_Attach to Running Container_"
+- develop and test in the container
+
+## run unit tests
 ```
-pip install <libaray>
+python -m unittest project.submodule.tests.unit.scripts.test_script
 ```
+
+## install new libraries
+```
+pip install <library>
+pip freeze | grep "library" # to get version that is installed
+
+poetry add <libarary=version.0.0>
+```
+- do NOT run `poetry update` or `poetry lock` or `poetry install` as it will update all libraries and likely ruin the lock file.
+
+- copy the content of the lock file to the local repo and commit it
+- copy the content of the toml file to the local repo and commit it
+
 
 
 
