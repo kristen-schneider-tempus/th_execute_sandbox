@@ -16,7 +16,7 @@
 
 
 | sample | th_exec analysis ID | th_exec execution ID | BIPS execution ID | fastq url |
-|----------|----------|----------|----------|
+|----------|----------|----------|----------|----------|
 | sample7 | agkpnofdprgyrfrbf2ktrhphoy | 5fd12c8f-6096-4226-9f26-df6c757ae25a | 5af27560-06fc-457b-b9c5-d93da5a56875 | gs://tl-bet-sequencer-output-fastq-us/20241208-042436-652760-ef951c740108/24-D37629_RSQ1.tar.gz |
 | sample8 | agkpnoelv5cgrmg4of2ibtifhe | 1bd621ff-259f-459b-83e4-862d3b128892 | b6548283-bf1a-4679-ba4f-9a131d8e7d83 | gs://tl-bet-sequencer-output-fastq-us/20241208-042436-652760-ef951c740108/24-D37630_RSQ1.tar.gz |
 | sample9 | agkpnogg5ne37cdceob7pwd7iu | c821c8cc-34e4-459b-91c9-bb9a71844487 | e5467cad-74a7-4c12-8d0e-e50a28f1f1b9 | gs://tl-bet-sequencer-output-fastq-us/20241208-042436-652760-ef951c740108/24-D37631_RSQ1.tar.gz |
