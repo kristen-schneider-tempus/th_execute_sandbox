@@ -52,7 +52,7 @@ TH_EXEC_JSON_FORMAT = {
             }
         },
         "parameters": {},
-        "transform_id": "0d33c1f1-6541-49e4-91bd-f4626bc6dd03"
+        "transform_id": "0d33c1f1-6541-49e4-91bd-f4626bc6dd03" # this is the NEW transform ID we are testing (from concourse)
     }
 
 def parse_args():
@@ -100,6 +100,16 @@ def main():
     # read in csv file
     input_csv_df = pd.read_csv(input_csv_file)
     
+    
+def create_input_json_files(input_csv_df,
+                            input_dir):
+    
+    """
+    Create input json files for each sample in the input csv file
+    
+    Return a list of input json file names
+    """
+    
     # create an empty list to save input json file names
     input_json_name_list = []
     
@@ -108,55 +118,56 @@ def main():
     for i in range(len(input_csv_df)):
         temp_input_json_data = TH_EXEC_JSON_FORMAT
         
+        # extract data from csv file and insert into json file
         temp_input_json_data["transform_id"] = input_csv_df.loc[i, "transform_id"]
+        
         temp_input_json_data["environment"]["CONFIG"]["order_id"] = input_csv_df.loc[i, "order_id"]
         temp_input_json_data["environment"]["CONFIG"]["tarball"] = input_csv_df.loc[i, "order_id"]
-    #    temp_input_json_data["environment"]["CONFIG"]["ref_bucket"] = input_csv.loc[i, "ref_bucket"]
         temp_input_json_data["environment"]["CONFIG"]["tumor_fastq_archive"] = input_csv_df.loc[
             i, "tumor_fastq_archive"
         ]
-    #   temp_input_json_data["environment"]["CONFIG"]["normal_fastq_archive"] = input_csv.loc[
-    #       i, "normal_fastq_archive"
-    #   ]
-    #   temp_input_json_data["environment"]["CONFIG"]["docker_image"] = input_csv.loc[
-    #       i, "docker_image"
-    #   ]
         temp_input_json_data["environment"]["CONFIG"]["workflow"] = input_csv_df.loc[i, "workflow"]
         temp_input_json_data["environment"]["CONFIG"]["cancer_type"] = input_csv_df.loc[i, "cancer_type"]
         temp_input_json_data["environment"]["CONFIG"]["assay"] = input_csv_df.loc[i, "assay"]
+        
         temp_input_json_data["data_products"]["rnfd-reportable-fusion-reference-criterion"]["dpId"] = input_csv_df.loc[i, "rnfd-reportable-fusion-reference-criterion_dpID"]
         temp_input_json_data["data_products"]["rnfd-annotated-fusions-collapsed-intermediate"]["dpId"] = input_csv_df.loc[i, "rnfd-annotated-fusions-collapsed-intermediate_dpID"]  
+        
+        # add the data product manifest to the json file
         temp_input_json_data = [temp_input_json_data]
         json_string = json.dumps(temp_input_json_data)
-        name = input_csv_df.loc[i, "order_id"]
+        name = input_csv_df.loc[i, "order_id"] # name by order_id
         input_json_name_list.append("./input_json/%s.json" % name)
-        with open("./input_json/%s.json" % name, "w") as outfile:
+        with open(input_dir + "/%s.json" % name, "w") as outfile:
             outfile.write(json_string)
-
+            outfile.close()
+        print("Created json file %s.json" % name)
+        
+    return input_json_name_list
+        
+       
+def run_th_exec(input_json_name_list,
+                output_dir):
+    """
+    Run th_exec for each sample in the input json file list
+    Save output to output_json directory
+    """ 
     # check if output directory exists, if not create it
     if not os.path.exists(output_dir):
         os.mkdir(output_dir)
 
-#############
 
-
-
-
-# create a directory to save output json files
-if not os.path.exists("output_json"):
-    os.mkdir("output_json")
-
-# launch each sample and save output to output_json
-for filename in input_json_name_list:
-    subprocess.run(
-        [
-            "python3",
-            "-m",
-            "bioinf_analysis_utils.orch.th_execute",
-            "--input-path",
-            filename,
-            "--output-path",
-            "output_json/%s" % filename.split("/")[-1], # write to out dir and name output file with similar naming convention as input
-        ]
-    )
-    time.sleep(1)
+    # launch each sample and save output to output_json
+    for filename in input_json_name_list:
+        subprocess.run(
+            [
+                "python3",
+                "-m",
+                "bioinf_analysis_utils.orch.th_execute",
+                "--input-path",
+                filename,
+                "--output-path",
+                "output_json/%s" % filename.split("/")[-1], # write to out dir and name output file with similar naming convention as input
+            ]
+        )
+        time.sleep(1)
