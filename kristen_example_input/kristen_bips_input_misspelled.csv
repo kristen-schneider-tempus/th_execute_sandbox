@@ -1,0 +1,11 @@
+orderhub_id,gcs_tumor_fastq_url,cancer_type,assay,analyte,match_type,intent
+Sample16_Rep1,gs://tl-bet-sequencer-output-fastq-us/20241208-042436-652760-ef951c740108/24-D37638_RSQ1.tar.gz,Hed and Neck Cancer,RNA-onco.v1,rna,tumorOnly,rad
+Sample8_Rep1,gs://tl-bet-sequencer-output-fastq-us/20241208-042436-652760-ef951c740108/24-D37630_RSQ1.tar.gz,head and neck cancer,RNA-onco.v1,rna,tumorOnly,rad
+Sample11_Rep1,gs://tl-bet-sequencer-output-fastq-us/20241208-042436-652760-ef951c740108/24-D37633_RSQ1.tar.gz,Head and Nek Cancer,RNA-onco.v1,rna,tumorOnly,rad
+Sample7_Rep1,gs://tl-bet-sequencer-output-fastq-us/20241208-042436-652760-ef951c740108/24-D37629_RSQ1.tar.gz,head and neck Cncer,RNA-onco.v1,rna,tumorOnly,rad
+Sample13_Rep1,gs://tl-bet-sequencer-output-fastq-us/20241208-042436-652760-ef951c740108/24-D37635_RSQ1.tar.gz,Head and Neck Cancr,RNA-onco.v1,rna,tumorOnly,rad
+Sample14_Rep1,gs://tl-bet-sequencer-output-fastq-us/20241208-042436-652760-ef951c740108/24-D37636_RSQ1.tar.gz,Head and Neck Cancer,RNA-onco.v1,rna,tumorOnly,rad
+Sample9_Rep1,gs://tl-bet-sequencer-output-fastq-us/20241208-042436-652760-ef951c740108/24-D37631_RSQ1.tar.gz,Head nd Neck Cancer,RNA-onco.v1,rna,tumorOnly,rad
+Sample12_Rep1,gs://tl-bet-sequencer-output-fastq-us/20241208-042436-652760-ef951c740108/24-D37634_RSQ1.tar.gz,Hed ad nkc cnre,RNA-onco.v1,rna,tumorOnly,rad
+Sample15_Rep1,gs://tl-bet-sequencer-output-fastq-us/20241208-042436-652760-ef951c740108/24-D37637_RSQ1.tar.gz,tempus,RNA-onco.v1,rna,tumorOnly,rad
+Sample10_Rep1,gs://tl-bet-sequencer-output-fastq-us/20241208-042436-652760-ef951c740108/24-D37632_RSQ1.tar.gz,rna squad,RNA-onco.v1,rna,tumorOnly,rad
