@@ -1,0 +1,35 @@
+[
+    {
+        "data_product_manifests": {},
+        "data_products": {
+            "rnfd-annotated-fusions-collapsed-intermediate": {
+                "type": "data-product",
+                "dpId": "4eb451a3-ce12-492b-8531-30a6913a791c"
+            },
+            "rnfd-reportable-fusion-reference-criterion": {
+                "type": "data-product",
+                "dpId": "a6025989-2c04-45f1-a185-a7fbb26472db"
+            }
+        },
+        "environment": {
+            "CONFIG": {
+                "analysis_id": "af5x6zkvcbhufg73iyrdj5bxra",
+                "assay": "RNA-onco.v1",
+                "cancer_type": "Head and Neck Cancer",
+                "data_product_storage_bucket": "tsc-bioinf-data-products-staging-usw2",
+                "cloud_destination": "gs://tl-bet-bioinf-analysis-complete-us",
+                "tumor_fastq_archive": "gs://tl-bet-sequencer-output-fastq-us/20241208-042436-652760-ef951c740108/24-D37638_RSQ1.tar.gz",
+                "do_upload_data_products": "true",
+                "log_formatter": "json",
+                "order_id": "Sample16_Rep1",
+                "slack_error_channel": "bio_jane_error_staging",
+                "slack_info_channel": "bio_jane_staging",
+                "token": "bioinformatics",
+                "tumor_purity_pathology": "21",
+                "workflow": "rna_fusion_char"
+            }
+        },
+        "parameters": {},
+        "transform_id": "37392c56-e05a-49ed-accb-f43862c37d5b"
+    }
+]
