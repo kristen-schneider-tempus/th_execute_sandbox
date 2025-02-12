@@ -100,6 +100,30 @@ def main():
     # read in csv file
     input_csv_df = pd.read_csv(input_csv_file)
     
+    # check if input csv file has the required columns
+    required_columns = ['order_id',
+                        'tumor_fastq_archive',
+                        'cancer_type',
+                        'workflow',
+                        'assay',
+                        'do_upload_to_cloud',
+                        'transform_id',
+                        'rnfd-annotated-fusions-collapsed-intermediate_dpID',
+                        'rnfd-reportable-fusion-reference-criterion_dpID']
+    for col in required_columns:
+        if col not in input_csv_df.columns:
+            print(f"Input csv file does not have required column {col}!")
+            sys.exit(1)
+            
+    input_json_list = create_input_json_files(input_csv_df,
+                                                input_dir)
+    print("Created input json files for each sample")
+    
+    print("Running th_exec for each sample")
+    run_th_exec(input_json_list,
+                output_dir)
+        
+    
     
 def create_input_json_files(input_csv_df,
                             input_dir):
@@ -156,7 +180,6 @@ def run_th_exec(input_json_name_list,
     if not os.path.exists(output_dir):
         os.mkdir(output_dir)
 
-
     # launch each sample and save output to output_json
     for filename in input_json_name_list:
         subprocess.run(
@@ -171,3 +194,4 @@ def run_th_exec(input_json_name_list,
             ]
         )
         time.sleep(1)
+        print("Running th_exec for %s" % filename.split("/")[-1])
